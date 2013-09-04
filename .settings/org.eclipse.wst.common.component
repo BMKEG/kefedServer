@@ -6,13 +6,28 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/clientApp" source-path="/clientApp"/>
+        <dependent-module archiveName="vpdmfGenerator-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/vpdmfGenerator/vpdmfGenerator">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="vpdmfCore-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/vpdmfCore/vpdmfCore">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="uml-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/uml/uml">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="ooevvDao-0.0.10-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/ooevvDao/ooevvDao">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="uml-0.1.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/uml/uml">
+        <dependent-module archiveName="digitalLibraryDao-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/digitalLibraryDao/digitalLibraryDao">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="bmkeg-utils-0.1.2-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bmkeg-utils/bmkeg-utils">
+        <dependent-module archiveName="lapdftextVpdmf-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/lapdftextVpdmf/lapdftextVpdmf">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lapdftext-1.7.3-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/lapdftext/lapdftext">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="bmkeg-utils-1.1.4-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/bmkeg-utils/bmkeg-utils">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="kefedServer"/>
