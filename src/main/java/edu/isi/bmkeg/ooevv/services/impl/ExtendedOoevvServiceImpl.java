@@ -27,7 +27,7 @@ public class ExtendedOoevvServiceImpl implements ExtendedOoevvService {
 	@Autowired
 	private ExtendedOoevvDao extOoevvDao;
 
-	public void setooevvDao(ExtendedOoevvDao ooevvDao) {
+	public void setExtOoevvDao(ExtendedOoevvDao ooevvDao) {
 		this.extOoevvDao = ooevvDao;
 	}
 	
