@@ -26,7 +26,9 @@
 
 	<bean id="dlVpdmf" class="edu.isi.bmkeg.vpdmf.dao.CoreDaoImpl" 
 		init-method="init" scope="thread"
-		p:uri="#{bmkegProperties.dbUrl}" p:login="#{bmkegProperties.dbUser}" p:password="#{bmkegProperties.dbPassword}">
+		p:uri="#{bmkegProperties.dbUrl}" 
+		p:login="#{bmkegProperties.dbUser}" 
+		p:password="#{bmkegProperties.dbPassword}">
 		
 		<!--  container to proxy the surrounding bean -->
 		<aop:scoped-proxy/>

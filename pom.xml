@@ -10,14 +10,14 @@
 	<parent>
 		<groupId>edu.isi.bmkeg</groupId>
 		<artifactId>bmkeg-parent</artifactId>
-		<version>1.1.4-SNAPSHOT</version>
+		<version>1.1.5-SNAPSHOT</version>
 		<relativePath>../bmkeg-parent</relativePath>
 	</parent>
 
 	<name>KEfED Server</name>
 
 	<properties>
-		<!-- HTML Wrapper Template parameters  -->
+		<!-- HTML Wrapper Template parameters -->
 		<htmlwrapper.width>100%</htmlwrapper.width>
 		<htmlwrapper.height>100%</htmlwrapper.height>
 		<htmlwrapper.bgcolor>#ffffff</htmlwrapper.bgcolor>
@@ -29,101 +29,76 @@
 		<htmlwrapper.flashplayer.revision>0</htmlwrapper.flashplayer.revision>
 
 		<wrapperTemplate.dir>html-wrapper-template</wrapperTemplate.dir>
-		
-    	<flexmojos.version>4.2-beta</flexmojos.version>
-	  	<flex.version>4.5.0.20967</flex.version>
+
+		<flexmojos.version>4.2-beta</flexmojos.version>
+		<flex.version>4.5.0.20967</flex.version>
 	</properties>
-	
+
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
 
-			<!-- 
-			
-				The following configuration is used in place of the  
-				flexmojos:wrapper goal which isn't working in the current context.
-				
-				It will copy the html wrapper resources which are contained in 
-				the ${wrapperTemplate.dir} directory into the webapp directory.
-				
-				While copying these resources it will expand the ${htmlwrapper.*} parameter
-				values (defined as properties above).
-				
-			 -->
+			<!-- The following configuration is used in place of the flexmojos:wrapper 
+				goal which isn't working in the current context. It will copy the html wrapper 
+				resources which are contained in the ${wrapperTemplate.dir} directory into 
+				the webapp directory. While copying these resources it will expand the ${htmlwrapper.*} 
+				parameter values (defined as properties above). -->
 			<plugin>
-			    <artifactId>maven-war-plugin</artifactId>
-	            <version>2.1.1</version>	    
-			    <configuration>
-		         <nonFilteredFileExtensions>
-		            <nonFilteredFileExtension>swf</nonFilteredFileExtension>
-		            <nonFilteredFileExtension>swc</nonFilteredFileExtension>
-		          </nonFilteredFileExtensions>
-		          <webResources>
-			            <resource>
-			                <directory>${wrapperTemplate.dir}</directory>
-			                <filtering>true</filtering>
-			            </resource>
-			        </webResources>
-			   </configuration>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>swf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>swc</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+					<webResources>
+						<resource>
+							<directory>${wrapperTemplate.dir}</directory>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
 			</plugin>
-			
-			<!--  
-			
-				The following plugin is used to rapidly test the webapp
-				in jetty. 
-				
-				To start a jetty server execute the command:
-				
-					mvn jetty:run-war
-					
-				This command will generate the war file and will deploy it in 
-				a jetty server (see http://jetty.codehaus.org/jetty/maven-plugin/run-war-mojo.html). 
-				  
-			 -->
+
+			<!-- The following plugin is used to rapidly test the webapp in jetty. 
+				To start a jetty server execute the command: mvn jetty:run-war This command 
+				will generate the war file and will deploy it in a jetty server (see http://jetty.codehaus.org/jetty/maven-plugin/run-war-mojo.html). -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.16</version>
 			</plugin>
-			
-		        <!-- 
-		        
-		        	The goal copy-flex-resources is used to package a flex client
-		        	application within the webapp directory.
-		        
-		         -->
 
-		    <plugin>
- 		        <groupId>org.sonatype.flexmojos</groupId>
-		        <artifactId>flexmojos-maven-plugin</artifactId>
- 		        <version>${flexmojos.version}</version>
-				
+			<!-- The goal copy-flex-resources is used to package a flex client application 
+				within the webapp directory. -->
+
+			<plugin>
+				<groupId>org.sonatype.flexmojos</groupId>
+				<artifactId>flexmojos-maven-plugin</artifactId>
+				<version>${flexmojos.version}</version>
 				<dependencies>
 					<dependency>
 						<groupId>com.adobe.flex</groupId>
-			            <artifactId>compiler</artifactId>
-			            <version>${flex.version}</version>
-			            <type>pom</type>						
+						<artifactId>compiler</artifactId>
+						<version>${flex.version}</version>
+						<type>pom</type>
 					</dependency>
 				</dependencies>
-				
- 		        <executions>
-		        
-			        <execution>
-			            <goals>
-			                <goal>copy-flex-resources</goal>
-			            </goals>
-			            <configuration>
-			            	<webappDirectory>
-			            		${project.build.directory}/${project.build.finalName}
-			            	</webappDirectory>
-			            	<stripVersion>true</stripVersion>
-			            </configuration>
-			        </execution>
-			        
-		        </executions>      
-		        
-	        </plugin>
+				<executions>
+					<execution>
+						<goals>
+							<goal>copy-flex-resources</goal>
+						</goals>
+						<configuration>
+							<webappDirectory>
+								${project.build.directory}/${project.build.finalName}
+							</webappDirectory>
+							<stripVersion>true</stripVersion>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.6</version>
@@ -147,8 +122,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			
-			
+
+
 			<!-- Exclude class TestUtil from the test cases -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -164,7 +139,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -221,7 +197,6 @@
 	</build>
 
 	<dependencies>
-			
 
 		<!-- DAO -->
 
@@ -229,6 +204,10 @@
 			<groupId>edu.isi.bmkeg</groupId>
 			<artifactId>kefedDao</artifactId>
 			<exclusions>
+				<exclusion>
+					<artifactId>vpdmfSystem-jpa</artifactId>
+					<groupId>edu.isi.bmkeg</groupId>
+				</exclusion>
 				<exclusion>
 					<artifactId>ooevv-jpa</artifactId>
 					<groupId>edu.isi.bmkeg</groupId>
@@ -249,23 +228,24 @@
 					<artifactId>ftd-jpa</artifactId>
 					<groupId>edu.isi.bmkeg</groupId>
 				</exclusion>
+				<exclusion>
+					<artifactId>vpdmfGenerator</artifactId>
+					<groupId>edu.isi.bmkeg</groupId>
+				</exclusion>
 			</exclusions>
 		</dependency>
-		
-		<!-- 		
-			Client App (in Flex) to be embedded	within the WAR file.
-			
-			The html wrapper parameters ${htmlwrapper.swf} and 
-			${htmlwrapper.application} (configured as properties 
-			above) should refer to this resource.-->
-		
-<!-- 		<dependency>
+
+		<!-- <dependency>
 			<groupId>edu.isi.bmkeg</groupId>
-			<artifactId>kefedClientApp</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
-			<type>swf</type>
-		</dependency>
- -->
+			<artifactId>vpdmfSpring</artifactId>
+		</dependency> -->
+
+		<!-- Client App (in Flex) to be embedded within the WAR file. The html 
+			wrapper parameters ${htmlwrapper.swf} and ${htmlwrapper.application} (configured 
+			as properties above) should refer to this resource. -->
+
+		<!-- <dependency> <groupId>edu.isi.bmkeg</groupId> <artifactId>kefedClientApp</artifactId> 
+			<version>0.0.3-SNAPSHOT</version> <type>swf</type> </dependency> -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -277,7 +257,6 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -359,10 +338,10 @@
 		<!-- Servlet -->
 
 		<dependency>
-		  <groupId>javax.servlet</groupId>
-		  <artifactId>servlet-api</artifactId>
-		  <version>2.5</version>
-		  <scope>provided</scope>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -375,31 +354,52 @@
 			<artifactId>lapdftext</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>3.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.1.4.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>flex-mojos-repository</id>
-      <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
-	  <releases> 
-		<enabled>true</enabled> 
-	  </releases>
-      <snapshots> 
-		<enabled>true</enabled>
-	  </snapshots>
-    </pluginRepository>
-    <pluginRepository>
-        <id>flexpmd.opensource.adobe</id>
-	    <releases>
-	        <enabled>true</enabled>
-    	    </releases>
-	    <snapshots>
-	        <enabled>false</enabled>
-	    </snapshots>
-	    <name>FlexPMD repository on opensource.adobe.com</name>
-	    <url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>	
-    </pluginRepository>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>flex-mojos-repository</id>
+			<url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>flexpmd.opensource.adobe</id>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<name>FlexPMD repository on opensource.adobe.com</name>
+			<url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
+		</pluginRepository>
 
-  </pluginRepositories>
+	</pluginRepositories>
 
 </project>
