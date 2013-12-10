@@ -7,8 +7,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-
-	<context:annotation-config />
  
  	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>  
 
@@ -20,9 +18,7 @@
 	            </entry>
 	        </map>
 	    </property>
-	</bean>
- 
-    <context:component-scan base-package="edu.isi.bmkeg" />     
+	</bean> 
 
 	<bean id="dlVpdmf" class="edu.isi.bmkeg.vpdmf.dao.CoreDaoImpl" 
 		init-method="init" scope="thread"
@@ -34,6 +30,5 @@
 		<aop:scoped-proxy/>
 	
 	</bean>			
-
 
 </beans>
