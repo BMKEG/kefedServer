@@ -13,7 +13,7 @@
 	<c:url value="/images/SciKnowSoft_OnWhite.jpg" var="headerImage3" />
 	
 	<div class="header well">
-		<img src="${headerImage2}"/>
+		<img src="${headerImage3}" height="90px"/>
 		<div class="page-header">
 			<h1>${title}</h1>
 		</div>	

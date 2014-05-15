@@ -6,12 +6,12 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <c:url value="/images/favicon.ico" var="iconImage" />
-<c:url value="/style/app.css" var="stsm_css" />
+<c:url value="/style/app.css" var="app_css" />
 
 <html>
 	<head>
 		<meta charset="utf-8">
-		<style type="text/css" href="${stsm_css}"></style>
+		<link rel="stylesheet" href="${app_css}"/>
 		<title>Index</title>
 		<link rel="shortcut icon" href="${iconImage}" type="image/x-icon" />
 	</head>
