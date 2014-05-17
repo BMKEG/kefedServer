@@ -3,3 +3,5 @@ target/*
 /target
 .history
 .springBeans
+/target
+/bin

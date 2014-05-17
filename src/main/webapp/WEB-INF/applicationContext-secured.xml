@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:sec="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-1.5.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -11,22 +12,28 @@
 		- working example: http://howtodoinjava.com/2013/04/16/custom-userdetailsservice-example-for-spring-3-security/ 
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-	<!-- <sec:authentication-manager alias="authenticationManager"> <sec:authentication-provider 
-		ref="daoAuthenticationProvider" /> </sec:authentication-manager> -->
+	<sec:http auto-config="true">
+		<!-- Adding Password Protection -->		
+		<sec:intercept-url pattern="/**" access="ROLE_USER" /> 
+		<!-- <sec:intercept-url pattern="/**" access="ROLE_ANONYMOUS" /> -->
+	</sec:http>
+
+	<!--<sec:authentication-manager alias="authenticationManager"> 
+		<sec:authentication-provider ref="daoAuthenticationProvider" />
+	</sec:authentication-manager>  -->
 	<sec:authentication-manager alias="authenticationManager">
 		<sec:authentication-provider>
 			<sec:user-service>
-				<sec:user name="user" password="pass" authorities="ROLE_USER" />
+				<sec:user name="mgi" password="jax" authorities="ROLE_USER" />
 			</sec:user-service>
 		</sec:authentication-provider>
 	</sec:authentication-manager>
 
 	<bean id="loggerListener"
 		class="org.springframework.security.authentication.event.LoggerListener" />
-
-	<sec:http auto-config="true">
-		<sec:intercept-url pattern="/**" access="ROLE_USER" />
-	</sec:http>
+    
+     <bean id="entryPoint" 
+        class="org.springframework.flex.security3.FlexAuthenticationEntryPoint"/> 
 
 <!-- 	<bean id="daoAuthenticationProvider"
 		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">

@@ -30,7 +30,6 @@
 		" />
 		
 	<!-- Scans the classpath of this application for @Components to deploy as beans-->
-	<context:component-scan base-package="edu.isi.bmkeg" />
 	<context:component-scan base-package="edu.isi.bmkeg.controller" />
 	<context:annotation-config />
 
@@ -41,6 +40,7 @@
 		<property name="dbUser" value="${bmkeg.dbUser}" />
 		<property name="dbPassword" value="${bmkeg.dbPassword}" />
 		<property name="persistenceUnitName" value="${bmkeg.persistenceUnitName}" />
+		<property name="workingDirectory" value="${bmkeg.workingDirectory}" />
 	</bean>
 
 	<!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->

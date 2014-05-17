@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.isi.bmkeg</groupId>
-	<artifactId>kefedServer</artifactId>
+	<artifactId>sciKnowLab</artifactId>
 	<version>0.0.3-SNAPSHOT</version>
 	<packaging>war</packaging>
 
@@ -14,14 +14,14 @@
 		<relativePath>../bmkeg-parent</relativePath>
 	</parent>
 
-	<name>KEfED Server</name>
+	<name>SciKnowLab Web Application</name>
 
 	<properties>
 		<!-- HTML Wrapper Template parameters -->
 		<htmlwrapper.width>100%</htmlwrapper.width>
 		<htmlwrapper.height>100%</htmlwrapper.height>
 		<htmlwrapper.bgcolor>#ffffff</htmlwrapper.bgcolor>
-		<htmlwrapper.title>KEfED Application</htmlwrapper.title>
+		<htmlwrapper.title>SciKnowLab Web Application</htmlwrapper.title>
 		<htmlwrapper.application>kefedClientApp</htmlwrapper.application>
 		<htmlwrapper.swf>kefedClientApp</htmlwrapper.swf>
 		<htmlwrapper.flashplayer.version.major>10</htmlwrapper.flashplayer.version.major>
