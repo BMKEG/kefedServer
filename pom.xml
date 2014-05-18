@@ -209,23 +209,7 @@
 					<groupId>edu.isi.bmkeg</groupId>
 				</exclusion>
 				<exclusion>
-					<artifactId>ooevv-jpa</artifactId>
-					<groupId>edu.isi.bmkeg</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>digitalLibrary-jpa</artifactId>
-					<groupId>edu.isi.bmkeg</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>digitalLibrary</artifactId>
-					<groupId>edu.isi.bmkeg</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>ftd</artifactId>
-					<groupId>edu.isi.bmkeg</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>ftd-jpa</artifactId>
+					<artifactId>vpdmf-ooevv-jpa</artifactId>
 					<groupId>edu.isi.bmkeg</groupId>
 				</exclusion>
 				<exclusion>
@@ -380,16 +364,6 @@
 			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
 			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>edu.isi.bmkeg</groupId>
-			<artifactId>digitalLibraryDao</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>edu.isi.bmkeg</groupId>
-			<artifactId>lapdftext</artifactId>
 		</dependency>
 
 		<dependency>

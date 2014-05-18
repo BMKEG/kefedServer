@@ -14,7 +14,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
-<title>SciKnowMine System</title>
+<title>SciKnowLab System</title>
 <link rel="shortcut icon" href="${iconImage}" type="image/x-icon" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -42,11 +42,11 @@
 	params.allowscriptaccess = "sameDomain";
 	params.allowfullscreen = "true";
 	var attributes = {};
-	attributes.id = "sciKnowMineSystem";
-	attributes.name = "sciKnowMineSystem";
+	attributes.id = "sciKnowLabSystem";
+	attributes.name = "sciKnowLabSystem";
 	attributes.align = "middle";
 	attributes.style = "padding-top: 5px; padding-bottom: 5px;";
-	swfobject.embedSWF("sciKnowMineSystem.swf", "flashContent", "100%", "100%",
+	swfobject.embedSWF("sciKnowLabSystem.swf", "flashContent", "100%", "100%",
 			swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
 	swfobject.createCSS("#flashContent", "display:block;text-align:left;");
 </script>
@@ -83,15 +83,15 @@
 
 			<noscript>
 				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-					width="100%" height="100%" id="sciKnowMineSystem.swf" >
-					<param name="movie" value="sciKnowMineSystem.swf" />
+					width="100%" height="100%" id="sciKnowLabSystem.swf" >
+					<param name="movie" value="sciKnowLabSystem.swf" />
 					<param name="quality" value="high" />
 					<param name="bgcolor" value="#ffffff" />
 					<param name="allowScriptAccess" value="sameDomain" />
 					<param name="allowFullScreen" value="true" />
 					<!--[if !IE]>-->
 					<object type="application/x-shockwave-flash"
-						data="sciKnowMineSystem.swf" width="100%" height="100%">
+						data="sciKnowLabSystem.swf" width="100%" height="100%">
 						<param name="quality" value="high" />
 						<param name="bgcolor" value="#ffffff" />
 						<param name="allowScriptAccess" value="sameDomain" />

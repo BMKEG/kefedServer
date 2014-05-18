@@ -5,3 +5,6 @@ target/*
 .springBeans
 /target
 /bin
+.classpath
+.settings
+.project
